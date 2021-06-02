@@ -43,6 +43,4 @@ export class ClubsService {
         console.log(rej)
       })
   }
-
-
 }
