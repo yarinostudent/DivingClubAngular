@@ -6,15 +6,17 @@
     <div class="col-lg-6 text-white overflow-hidden shadow-lg p-3 mx-auto myBg">
       <form #f="ngForm" (ngSubmit)="onSub()">
         <label>Email:</label>
-        <input type="email" #inputEmail="ngModel" class="form-control" ngModel name="email" email required>
-        <ngb-alert [dismissible]="false" *ngIf="inputEmail.invalid && inputEmail.touched" class="alert alert-danger fade show"
-          role="alert">
+        <input type="email" #inputEmail="ngModel" class="form-control" ngModel name="email" email required
+          placeholder="Enter Email">
+        <ngb-alert [dismissible]="false" *ngIf="inputEmail.invalid && inputEmail.touched"
+          class="alert alert-danger fade show" role="alert">
           Please Enter Valid Email
         </ngb-alert>
         <label>Password:</label>
-        <input type="password" #inputPass="ngModel" class="form-control" ngModel name="password" minlength="2" required>
-        <ngb-alert [dismissible]="false" *ngIf="inputPass.invalid && inputPass.touched" class="alert alert-danger fade show"
-          role="alert">
+        <input type="password" #inputPass="ngModel" class="form-control" ngModel name="password" minlength="2" required
+          placeholder="Enter Password">
+        <ngb-alert [dismissible]="false" *ngIf="inputPass.invalid && inputPass.touched"
+          class="alert alert-danger fade show" role="alert">
           Please Enter Valid Password
         </ngb-alert>
         <button class="btn btn-success w-100 mt-3">Login</button>
