@@ -1,0 +1,52 @@
+<mat-toolbar class="bg-dark text-white">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button mat-button routerLink="/" fxLayoutAlign="center center">
+        <img src="../../../assets/images/diverIcon.png" alt="logo" class="logo_icon me-1">
+        <span>DiveWhere &#169;</span>
+      </button>
+    </div>
+    <div class="overflow-hidden" fxLayoutAlign="center center">
+      <button fxHide.gt-xs mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu
+        </mat-icon>
+      </button>
+      <div fxHide.lt-sm fxLayout="row">
+        <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Club
+          List</button>
+        <button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Login</button>
+        <div *ngIf="isLoggedIn">
+          <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fa fa-user-circle-o fs-3"
+              aria-hidden="true"></i>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="/userInfo" routerLinkActive="active">User Info</button>
+            <button mat-menu-item routerLink="/myClubs" routerLinkActive="active">My Clubs</button>
+            <button mat-menu-item routerLink="/addClub" routerLinkActive="active">Add Club</button>
+          </mat-menu>
+        </div>
+        <button mat-button *ngIf="isLoggedIn" routerLinkActive="active" (click)="logout()"
+          class="bg-danger">Logout</button>
+      </div>
+      <nav fxLayout="row" *ngIf="isMenuCollapsed" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center center">
+        <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Club
+          List</button>
+        <button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Login</button>
+        <div *ngIf="isLoggedIn">
+          <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fa fa-user-circle-o fs-3"
+              aria-hidden="true"></i>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="/userInfo" routerLinkActive="active">User Info</button>
+            <button mat-menu-item routerLink="/myClubs" routerLinkActive="active">My Clubs</button>
+            <button mat-menu-item routerLink="/addClub" routerLinkActive="active">Add Club</button>
+          </mat-menu>
+        </div>
+        <button mat-button *ngIf="isLoggedIn" routerLinkActive="active" (click)="logout()"
+          class="bg-danger">Logout</button>
+      </nav>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,22 @@
+.mainHeader {
+  background: rgb(3, 100, 133);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 50vh;
+  background-image: url("src\assets\images\turtle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.borderBtm{
+  border-bottom: 5px solid black;
+}

@@ -1,0 +1,32 @@
+<app-queris-nav></app-queris-nav>
+<main>
+  <div class="container">
+    <h1>Your Clubs:</h1>
+    <div *ngIf="myClubs_list.length==0">
+      You Dont Have Clubs Yet.
+      You Can Add One Here
+      <button class="btn btn-warning" routerLink="/addClub">Add Club</button>
+    </div>
+    <div *ngIf="myClubs_list.length!=0" class="row">
+      <div class="col-lg-6 p-2 bg-light" *ngFor="let item of myClubs_list">
+        <div class="shadow-lg p-2 text-center overflow-hidden h-100 brdRadius">
+          <img src="{{item.logo_url}}" alt="{{item.name}} logo" class="w-25 ">
+          <h4>{{item.name}}</h4>
+          <div>{{item.org}}</div>
+          <div>Tel: {{item.phone}}</div>
+          <div>{{item.location}}</div>
+          <a routerLink="/editClub/{{item._id}}">
+            <i class="fa fa-pencil-square-o btn btn-warning" aria-hidden="true"></i>
+          </a>
+          <i (click)="delClub(item._id)" class="fa fa-trash-o btn btn-danger" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3 m-3">
+      <a [ngClass]="{'active':i===currentPage}" *ngFor="let item of club_length;let i=index" (click)="changePage(i)"
+        class="rounded fs-5 p-1 myPagination text-center">
+        {{item}}
+      </a>
+    </div>
+  </div>
+</main>

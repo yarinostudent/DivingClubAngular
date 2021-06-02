@@ -1,0 +1,58 @@
+<main>
+  <div class="container bg-light pb-3 d-flex flex-column align-items-center">
+    <h1 class="p-1">Edit {{club_obj.name}} Club
+      <hr>
+    </h1>
+    <div class="col-lg-6 overflow-hidden shadow-lg p-3 mx-auto">
+      <form #f="ngForm" (ngSubmit)="onSub()">
+        <label>*Club Name:</label>
+        <input type="text" #inputName="ngModel" class="form-control" [ngModel]="club_obj.name" name="name" minlength="2"
+          required>
+        <ngb-alert [dismissible]="false" *ngIf="inputName.invalid && inputName.touched"
+          class="alert alert-danger fade show" role="alert">
+          Please Enter Valid Name
+        </ngb-alert>
+        <label>*Club Phone Number:</label>
+        <input type="tel" #inputPhone="ngModel" class="form-control" [ngModel]="club_obj.phone" name="phone" required>
+        <ngb-alert [dismissible]="false" *ngIf="inputPhone.invalid && inputPhone.touched"
+          class="alert alert-danger fade show" role="alert">
+          Please Enter Phone Number
+        </ngb-alert>
+        <label>*Organization:</label>
+        <input type="text" #inputOrg="ngModel" class="form-control" [ngModel]="club_obj.org" name="org" minlength="2"
+          required placeholder="PADI | SSI | TIDF">
+        <ngb-alert [dismissible]="false" *ngIf="inputOrg.invalid && inputOrg.touched"
+          class="alert alert-danger fade show" role="alert">
+          Please Enter Organization
+        </ngb-alert>
+        <label>*Address:</label>
+        <input type="text" #inputAddress="ngModel" class="form-control" [ngModel]="club_obj.location" name="location"
+          minlength="2" required placeholder="street,number,state">
+        <ngb-alert [dismissible]="false" *ngIf="inputAddress.invalid && inputAddress.touched"
+          class="alert alert-danger fade show" role="alert">
+          Please Enter Address
+        </ngb-alert>
+        <label>*Logo URL:</label>
+        <input type="text" #inputLogo="ngModel" class="form-control" [ngModel]="club_obj.logo_url" name="logo_url"
+          minlength="2" required placeholder="Please Write the url with quotes">
+        <ngb-alert [dismissible]="false" *ngIf="inputLogo.invalid && inputLogo.touched"
+          class="alert alert-danger fade show" role="alert">
+          Please Enter Logo URL
+        </ngb-alert>
+        <label>Instagram URL:</label>
+        <input type="text" #inputInsta="ngModel" class="form-control" [ngModel]="club_obj.insta_url" name="insta_url"
+          placeholder="Please Write the url with quotes">
+        <label>Facebook URL:</label>
+        <input type="text" #inputOrg="ngModel" class="form-control" [ngModel]="club_obj.face_url" name="face_url"
+          placeholder="Please Write the url with quotes">
+        <label>Trip Advisor URL:</label>
+        <input type="text" #inputOrg="ngModel" class="form-control" [ngModel]="club_obj.trip_url" name="trip_url"
+          placeholder="Please Write the url with quotes">
+        <div class="buttons-control d-flex justify-content-between">
+          <button routerLink="/myClubs" class="btn btn-dark mt-3">Back</button>
+          <button class="btn btn-warning mt-3">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

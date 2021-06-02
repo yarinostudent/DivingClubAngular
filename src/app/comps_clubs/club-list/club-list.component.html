@@ -1,0 +1,33 @@
+<app-queris-nav></app-queris-nav>
+<main>
+  <div class="container">
+    <h1>Club List:</h1>
+    <div class="row">
+      <div class="col-lg-6 p-2 bg-light" *ngFor="let item of club_list">
+        <div class="shadow-lg p-2 text-center overflow-hidden h-100 brdRadius">
+          <img src="{{item.logo_url}}" alt="{{item.name}} logo" class="w-25 img-fluid mb-2">
+          <h4>{{item.name}}</h4>
+          <div>{{item.org}}</div>
+          <div>Tel: {{item.phone}}</div>
+          <div>{{item.location}}</div>
+          <div class="social mt-3 d-flex justify-content-center align-items-center me-3">
+            <a *ngIf="item.face_url" href="{{item.face_url}}">
+              <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            </a>
+            <a *ngIf="item.insta_url" href="{{item.insta_url}}">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a *ngIf="item.trip_url" href="{{item.trip_url}}">
+              <i class="fa fa-tripadvisor" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3 m-3">
+      <a [ngClass]="{'active':i===currentPage}" *ngFor="let item of club_length;let i=index" (click)="changePage(i)" class="rounded fs-5 p-1 myPagination text-center">
+        {{item}}
+      </a>
+    </div>
+  </div>
+</main>

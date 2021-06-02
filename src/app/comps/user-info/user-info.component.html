@@ -1,0 +1,14 @@
+<main>
+  <div class="container d-flex justify-content-center pt-3">
+    <div class="col-lg-6">
+      <h1><i class="fa fa-id-card-o" aria-hidden="true"></i> {{userInfo.name}} Info</h1>
+      <form #f="ngForm">
+        <label>Email:</label>
+        <input type="email" class="form-control" [(ngModel)]="userInfo.email" name="email" disabled>
+        <label>Date Created:</label>
+        <input type="text" class="form-control" [(ngModel)]="userInfo.createdAt" name="date" disabled>
+        <button routerLink="/myClubs" class="btn btn-dark float-end my-3">Your Clubs</button>
+      </form>
+    </div>
+  </div>
+</main>
