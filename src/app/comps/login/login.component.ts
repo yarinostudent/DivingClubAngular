@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSub(): void {
+    console.log(this.myForm.form.value)
     if (this.myForm.form.status == "VALID") {
       this.userSer.userLogin(this.myForm.form.value);
     } else {
