@@ -32,13 +32,9 @@
           class="alert alert-danger fade show" role="alert">
           Please Enter Address
         </ngb-alert>
-        <label>*Logo URL:</label>
+        <label>Logo URL:</label>
         <input type="text" #inputLogo="ngModel" class="form-control" [ngModel]="club_obj.logo_url" name="logo_url"
-          minlength="2" required placeholder="Please Write the url with quotes">
-        <ngb-alert [dismissible]="false" *ngIf="inputLogo.invalid && inputLogo.touched"
-          class="alert alert-danger fade show" role="alert">
-          Please Enter Logo URL
-        </ngb-alert>
+          minlength="2" placeholder="Please Write the url with quotes">
         <label>Instagram URL:</label>
         <input type="text" #inputInsta="ngModel" class="form-control" [ngModel]="club_obj.insta_url" name="insta_url"
           placeholder="Please Write the url with quotes">

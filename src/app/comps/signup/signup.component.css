@@ -82,3 +82,8 @@ input {
   margin-top: 1rem;
   color: rgb(0, 38, 78);
 }
+
+.login-control button {
+  color: white;
+  background: rgb(0, 38, 78);
+}

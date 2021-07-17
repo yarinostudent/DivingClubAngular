@@ -8,9 +8,10 @@
       <button class="btn btn-warning" routerLink="/addClub">Add Club</button>
     </div>
     <div *ngIf="myClubs_list.length!=0" class="row">
-      <div class="col-lg-6 p-2 bg-light" *ngFor="let item of myClubs_list">
+      <div class="col-lg-4 p-2 bg-light" *ngFor="let item of myClubs_list">
         <div class="shadow-lg p-2 text-center overflow-hidden h-100 brdRadius">
-          <img src="{{item.logo_url}}" alt="{{item.name}} logo" class="w-25 ">
+          <img src="{{item.logo_url}}" alt="{{item.name}} logo" class="w-25 "
+            onerror="this.src='assets/images/logo-placeholder.jpeg'">
           <h4>{{item.name}}</h4>
           <div>{{item.org}}</div>
           <div>Tel: {{item.phone}}</div>
@@ -19,6 +20,8 @@
             <i class="fa fa-pencil-square-o btn btn-warning" aria-hidden="true"></i>
           </a>
           <i (click)="delClub(item._id)" class="fa fa-trash-o btn btn-danger" aria-hidden="true"></i>
+          <h3 *ngIf="!item.visible" class="badge bg-danger">Waiting For Approve</h3>
+          <h3 *ngIf="item.visible" class="badge bg-success">Approved</h3>
         </div>
       </div>
     </div>

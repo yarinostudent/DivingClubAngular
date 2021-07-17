@@ -35,12 +35,12 @@
           <small>Please Enter Valid Password</small>
         </ngb-alert>
       </form>
-      <div class="login-control">
-        <span>Already have an account?</span>
-        <button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn btn-warning">Sign In!</button>
-      </div>
     </div>
     <div class="subBtn-control">
-      <button mat-dialog-close (click)="onSub()" class="btn">SignUp</button>
+      <button (click)="onSub()" class="btn">SignUp</button>
+    </div>
+    <div class="login-control">
+      <span class="fs-5">Already have an account?</span>
+      <button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn">Sign In!</button>
     </div>
   </div>

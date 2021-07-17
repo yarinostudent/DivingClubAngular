@@ -11,7 +11,7 @@ import { SignupComponent } from '../signup/signup.component';
 })
 export class LoginComponent implements OnInit {
   @ViewChild("f") myForm: any;
-  isLoggedIn: any;
+  color = "rgb(0, 38, 78)";
   constructor(private userSer: UsersService, private notifySer: NotificationService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,6 +25,6 @@ export class LoginComponent implements OnInit {
     }
   }
   openDialog(): void {
-    this.dialog.open(SignupComponent,{panelClass: 'custom-modalbox'});
+    this.dialog.open(SignupComponent,{panelClass: 'custom-modalbox',autoFocus: false});
   }
 }
