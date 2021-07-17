@@ -1,33 +1,46 @@
-<main>
-  <div class="container bg-light rounded pb-3 d-flex flex-column align-items-center">
-    <h1 class="p-1">SignUp
+  <div class="container">
+    <h1 class="p-1">Sign Up
       <hr>
     </h1>
-    <div class="col-lg-6 text-white overflow-hidden shadow-lg p-3 mx-auto myBg">
-      <form #f="ngForm" (ngSubmit)="onSub()">
-        <label>Name:</label>
-        <input type="text" #inputName="ngModel" class="form-control" ngModel name="name" minlength="2" required>
+    <span class="user-icon">
+      <i class="fa fa-user-circle fs-1" aria-hidden="true"></i>
+    </span>
+    <div class="form-wrapper shadow-lg">
+      <form #f="ngForm">
+        <div class="input-control">
+          <i class="fa fa-id-card" aria-hidden="true"></i>
+          <input type="text" #inputName="ngModel" class="form-control" ngModel name="name" minlength="2" required
+            placeholder="Enter Full Name">
+        </div>
         <ngb-alert [dismissible]="false" *ngIf="inputName.invalid && inputName.touched"
           class="alert alert-danger fade show" role="alert">
-          Please Enter Valid Name
+          <small>Please Enter Valid Name</small>
         </ngb-alert>
-        <label>Email:</label>
-        <input type="email" #inputEmail="ngModel" class="form-control" ngModel name="email" email required>
+        <div class="input-control">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="email" #inputEmail="ngModel" class="form-control" ngModel name="email" email required
+            placeholder="Enter Email">
+        </div>
         <ngb-alert [dismissible]="false" *ngIf="inputEmail.invalid && inputEmail.touched"
           class="alert alert-danger fade show" role="alert">
-          Please Enter Valid Email
+          <small>Please Enter Valid Email</small>
         </ngb-alert>
-        <label>Password:</label>
-        <input type="password" #inputPass="ngModel" class="form-control" ngModel name="password" minlength="2" required>
+        <div class="input-control">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" #inputPass="ngModel" class="form-control" ngModel name="password" minlength="2"
+            required placeholder="Enter Password">
+        </div>
         <ngb-alert [dismissible]="false" *ngIf="inputPass.invalid && inputPass.touched"
           class="alert alert-danger fade show" role="alert">
-          Please Enter Valid Password
+          <small>Please Enter Valid Password</small>
         </ngb-alert>
-        <button class="btn btn-success w-100 mt-3">SignUp</button>
       </form>
-      <div class="mt-2 text-center">Already have an account?
-        <button routerLink="/login" class="btn btn-warning">Sign In!</button>
+      <div class="login-control">
+        <span>Already have an account?</span>
+        <button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn btn-warning">Sign In!</button>
       </div>
     </div>
+    <div class="subBtn-control">
+      <button mat-dialog-close (click)="onSub()" class="btn">SignUp</button>
+    </div>
   </div>
-</main>

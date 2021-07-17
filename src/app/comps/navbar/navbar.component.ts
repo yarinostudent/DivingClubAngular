@@ -1,5 +1,7 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { MatDialog } from '@angular/material/dialog'
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   isLoggedIn: any;
   isMenuCollapsed: boolean = false;
   user_obj: any;
-  constructor(private userSer: UsersService) { }
+  constructor(private userSer: UsersService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     if (localStorage["tok"]) {
@@ -34,5 +36,9 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   logout(): void {
     this.userSer.logOut();
+  }
+
+  openDialog(): void {
+    this.dialog.open(LoginComponent,{panelClass: 'custom-modalbox'});
   }
 }

@@ -50,3 +50,7 @@ nav {
   right: 0;
   background: rgba(128, 128, 128, 0.8);
 }
+
+.mat-raised-button {
+  margin: 0 15px;
+}

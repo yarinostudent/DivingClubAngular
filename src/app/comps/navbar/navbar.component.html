@@ -14,7 +14,8 @@
       <div fxHide.lt-sm fxLayout="row">
         <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Club
           List</button>
-        <button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Login</button>
+        <button mat-raised-button (click)="openDialog()" *ngIf="!isLoggedIn" routerLinkActive="active"
+          mat-button>Login</button>
         <div *ngIf="isLoggedIn">
           <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fa fa-user-circle-o fs-3"
               aria-hidden="true"></i>
@@ -32,7 +33,9 @@
       <nav fxLayout="row" *ngIf="isMenuCollapsed" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center center">
         <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Club
           List</button>
-        <button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Login</button>
+        <button mat-raised-button (click)="openDialog()" *ngIf="!isLoggedIn" routerLinkActive="active" mat-button>
+          Login
+        </button>
         <div *ngIf="isLoggedIn">
           <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fa fa-user-circle-o fs-3"
               aria-hidden="true"></i>

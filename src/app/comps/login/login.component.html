@@ -1,4 +1,3 @@
-<main>
   <div class="container">
     <h1 class="p-1">Login
       <hr>
@@ -6,7 +5,7 @@
     <span class="user-icon">
       <i class="fa fa-user-circle fs-1" aria-hidden="true"></i>
     </span>
-    <div class="form-wrapper text-white overflow-hidden shadow-lg">
+    <div class="form-wrapper shadow-lg">
       <form #f="ngForm">
         <div class="input-control">
           <i class="fa fa-user" aria-hidden="true"></i>
@@ -26,14 +25,13 @@
           class="alert alert-danger fade show" role="alert">
           <small>Please Enter Valid Password</small>
         </ngb-alert>
+        <div class="signup-control">
+          <span>New Here?</span>
+          <button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn btn-warning">Sign Up!</button>
+        </div>
       </form>
-      <div class="signup-control">
-        <span>New Here?</span>
-        <button routerLink="/signup" class="btn btn-warning">Sign Up!</button>
-      </div>
     </div>
     <div class="subBtn-control">
-      <button (click)="onSub()" class="btn">Login</button>
+      <button mat-dialog-close (click)="onSub()" class="btn">Login</button>
     </div>
   </div>
-</main>

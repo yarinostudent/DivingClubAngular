@@ -20,8 +20,15 @@ body {
   margin-top: 0;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
 
@@ -218,6 +225,12 @@ button.toast-close-button {
   background-color: #000000;
   opacity: 0.4;
 }
+
+.custom-modalbox .mat-dialog-container {
+  background: rgba(255, 255, 255, 0.7);
+  /* background-color: red; */
+}
+
 
 /* Responsive Design */
 @media all and (max-width: 240px) {

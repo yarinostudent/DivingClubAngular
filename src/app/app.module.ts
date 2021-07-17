@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -44,6 +45,7 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     QuerisNavComponent
   ],
+  entryComponents: [LoginComponent,SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -57,6 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatButtonModule,
     MatSelectModule,
     MatMenuModule,
+    MatDialogModule,
     CommonModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
