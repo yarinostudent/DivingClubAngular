@@ -18,10 +18,10 @@ export class AddClubComponent implements OnInit {
   onSub(): void {
     if (this.myForm.form.status == "VALID") {
       let bodyData = this.myForm.form.value;
+      console.log(bodyData);
       let url = "https://diving-club-api.herokuapp.com/clubs/newClub";
       this.apiSer.postHeader(url, bodyData).subscribe((res: any) => {
-        this.notifySer.showSuccess("Added",this.myForm.form.value.nameInput)
-        console.log(res);
+        this.notifySer.showSuccess("Club adding request is being reviewd and awaiting approval",this.myForm.form.value.nameInput)
         this.route.navigate(['/myClubs']);
       },
         (rej: any) => {

@@ -9,6 +9,7 @@ import { ClubsService } from 'src/app/services/clubs.service';
 export class ClubListComponent implements OnInit {
   club_list: any[] = [];
   selectedSort: any;
+  
   //pagination
   club_length: any[] = [];
   currentPage: any = 0;
@@ -24,7 +25,13 @@ export class ClubListComponent implements OnInit {
 
   changePage(i: any): void {
     this.selectedSort = this.clubSer.selectedSort;
-    let url = `https://diving-club-api.herokuapp.com/clubs/info/?page=${i}&s=${this.clubSer.inputSearch}&sort=${this.selectedSort}`;
+    console.log(this.clubSer.inputSearch)
+    let url;
+    if (this.clubSer.inputSearch == '') {
+      url = `https://diving-club-api.herokuapp.com/clubs/info/?page=${i}&sort=${this.selectedSort}`;
+    } else {
+      url = `https://diving-club-api.herokuapp.com/clubs/info/?page=${i}&s=${this.clubSer.inputSearch}&sort=${this.selectedSort}`;
+    }
     this.clubSer.doApiClubList(url);
     this.club_list = this.clubSer.getClubsAr();
     this.currentPage = i;

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { sortBy, upperFirst } from 'lodash';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -30,12 +29,14 @@ export class ClubsService {
 
 
   doApiClubList(_url: any): any {
+    console.log(_url);
+    console.log(typeof this.inputSearch)
     this.club_list.splice(0, this.club_list.length);
     this.clubLength.splice(0, this.clubLength.length);
     this.apiSer.getRequest(_url).subscribe(
       (res: any) => {
         this.club_list.push(...res.clubs);
-        for (let i = 0; i < Math.ceil(res.clubsLength / 4); i++) {
+        for (let i = 0; i < Math.ceil(res.clubsLength / 6); i++) {
           this.clubLength.push(i + 1);
         }
       },

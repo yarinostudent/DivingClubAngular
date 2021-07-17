@@ -24,7 +24,8 @@ export class QuerisNavComponent implements OnInit {
     if (this.inputSearch) {
       this.clubSer.inputSearch = this.inputSearch;
       this.url = `https://diving-club-api.herokuapp.com/clubs/info/?s=${this.inputSearch}&page=${this.clubSer.page}&sort=${this.selectedSort}`;
-    } else {
+    } else if (!this.inputSearch || this.inputSearch === "") {
+      this.clubSer.inputSearch = '';
       this.url = `https://diving-club-api.herokuapp.com/clubs/info/?page=${this.clubSer.page}&sort=${this.selectedSort}`;
     }
     this.clubSer.doApiClubList(this.url);

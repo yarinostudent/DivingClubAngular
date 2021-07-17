@@ -2,6 +2,7 @@ import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from '../login/login.component';
+import { ClubsService } from 'src/app/services/clubs.service';
 
 @Component({
   selector: 'app-navbar',
@@ -39,6 +40,6 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
   openDialog(): void {
-    this.dialog.open(LoginComponent,{panelClass: 'custom-modalbox'});
+    this.dialog.open(LoginComponent,{panelClass: 'custom-modalbox',autoFocus: false});
   }
 }

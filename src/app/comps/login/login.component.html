@@ -25,13 +25,14 @@
           class="alert alert-danger fade show" role="alert">
           <small>Please Enter Valid Password</small>
         </ngb-alert>
-        <div class="signup-control">
-          <span>New Here?</span>
-          <button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn btn-warning">Sign Up!</button>
-          <div class="subBtn-control">
-            <button mat-dialog-close class="btn">Login</button>
-          </div>
-        </div>
       </form>
+    </div>
+    <div class="subBtn-control">
+      <button mat-raised-button class="btn" (click)="onSub()">Login</button>
+    </div>
+    <div class="signup-control">
+      <span class="fs-5">New Here?</span>
+      <button mat-button mat-raised-button mat-dialog-close (click)="openDialog()" class="btn text-white">Sign
+        Up!</button>
     </div>
   </div>
