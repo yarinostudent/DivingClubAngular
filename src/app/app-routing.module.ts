@@ -11,8 +11,6 @@ import { UserClubsComponent } from './comps_clubs/user-clubs/user-clubs.componen
 
 const routes: Routes = [
   { path: "", component: ClubListComponent },
-  // { path: "signup", component: SignupComponent },
-  // { path: "login", component: LoginComponent },
   { path: "userInfo", component: UserInfoComponent },
   { path: "myClubs", component: UserClubsComponent },
   { path: "addClub", component: AddClubComponent },
