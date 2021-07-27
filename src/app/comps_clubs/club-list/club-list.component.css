@@ -2,6 +2,10 @@
   border-radius: 50px;
 }
 
+.logo_img {
+  height: 5rem;
+}
+
 .active {
   color: red !important;
 }
